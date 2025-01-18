@@ -1,5 +1,6 @@
 import Image from "next/image";
 import IPAddress from "@/components/IPAddress";
+import BrowserInfo from "@/components/BrowserInfo";
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
                         Your IP Address
                     </h1>
                     <IPAddress />
+                    <BrowserInfo />
                     <div className="pt-6 space-y-4 text-left">
                         <h2 className="text-xl font-medium text-gray-800">
                             What is this?
