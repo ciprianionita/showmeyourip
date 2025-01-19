@@ -1,12 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 import { CircleDashed } from "lucide-react";
+import Flag from "react-world-flags";
 
 export default function IPAddress() {
     const [ip, setIp] = useState(null);
     const [city, setCity] = useState(null);
     const [region, setRegion] = useState(null);
-    const [country, setCountry] = useState(null);
+    const [countrycode, setCountryCode] = useState(null);
+    const [countryname, setCountryName] = useState(null);
     const [org, setOrg] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -18,7 +20,8 @@ export default function IPAddress() {
                 setIp(data.ip);
                 setCity(data.city);
                 setRegion(data.region);
-                setCountry(data.country_name);
+                setCountryCode(data.country_code);
+                setCountryName(data.country_name);
                 setOrg(data.org);
                 setLoading(false);
             })
@@ -48,7 +51,11 @@ export default function IPAddress() {
                             Region: {region}
                         </p>
                         <p className="text-xl text-gray-800">
-                            Country: {country}
+                            Country:{" "}
+                            <span className="inline-block w-6">
+                                <Flag code={countrycode} />
+                            </span>{" "}
+                            {countrycode} | {countryname}
                         </p>
                         <p className="text-xl text-gray-800">ISP: {org}</p>
                     </div>
