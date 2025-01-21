@@ -42,7 +42,7 @@ export default function IPAddress() {
                 <p className="text-red-500">{error}</p>
             ) : (
                 <>
-                    <div className="bg-gray-50 p-8 rounded-xl">
+                    <div className="bg-gray-50 py-8 px-4 rounded-xl">
                         <p className="text-4xl font-mono text-gray-800">{ip}</p>
                     </div>
                     <div className="space-y-2">
